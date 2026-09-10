@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+  <!-- NAVIGATION BAR -->
   <header class="nav-bar">
     <p class="nav-logo">caitlyn ly</p>
     <nav class="nav-links">
@@ -21,20 +21,18 @@
     </nav>
   </header>
 
+  <!-- LANDING PAGE -->
   <main class="landing-page" id="home">
     <div class="bg-layer" aria-hidden="true">
       <img class="bg-image" src="assets/landing-page-bg.png" alt="landing-page-bg" />
     </div>
 
     <div class="container">
-      
         <p class="home-path">/Users/caitlyn-ly/Desktop/home-page</p>
-      
-
       <div class="main-row">
         <div class="intro">
           <h1>Welcome to Caitlyn&rsquo;s portfolio!</h1>
-          <p class="hint">(you can drag the folders around!)</p>
+          <p class="hint">(drag the folders around, and click to navigate to a new page!)</p>
         </div>
 
         <div class="buttons" id="buttons">
@@ -68,7 +66,8 @@
       </div>
     </div>
   </main>
-
+  
+  <!-- FLOWER INTRO PAGE -->
   <section class="intro-page">
      <div class="bg-layer" aria-hidden="true">
       <img class="bg-image" src="assets/flower-page-bg.png" alt="flower-page-bg" />
@@ -89,6 +88,7 @@
     </div>
   </section>
 
+  <!-- ABOUT ME PAGE -->
   <section class="about-page" id="about">
     <div class="bg-layer" aria-hidden="true">
       <img class="bg-image" src="assets/about-me-bg.png" alt="" />
@@ -107,9 +107,11 @@
       I have always been very passionate about design and tech, and what better way to combine my passions in the field of Design Systems and UI/ UX Design!
     </p>
 
-    <p class="about-hint">(psssstt you can also drag these below too!)</p>
+    <p class="about-hint">(you can drag these icons around too! <b>double-click</b> them to learn more)</p>
 
     <div class="about-content">
+
+      <!-- CLICKABLE ICONS ON ABOUT ME PAGE -->
       <div class="buttons about-buttons" id="about-buttons">
         <button class="folder-button" type="button" data-target="current-favs">
            <span class="icon-visual">
@@ -133,6 +135,7 @@
         </button>
       </div>
 
+      <!-- CLICKABLE PHOTO CAROUSEL-->
       <div class="photo-carousel">
         <div class="carousel-titlebar">
           <img class="fake-buttons" src="assets/fake-window-buttons.svg" alt="fake-window-buttons" />
@@ -151,8 +154,121 @@
         </div>
       </div>
     </div>
+
+    <!-- ABOUT ME PAGE POP-UP WINDOWS -->
+    <div class="about-modal-overlay" id="about-modal-overlay" hidden>
+
+      <!-- CURRENT FAVS POP UP -->
+      <div
+        class="about-modal"
+        id="modal-current-favs"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-current-favs-title"
+        hidden
+      >
+        <div class="modal-titlebar">
+          <span class="window-dots">
+            <button class="window-dot dot-close" type="button" aria-label="Close window"></button>
+            <span class="window-dot dot-min" aria-hidden="true"></span>
+            <span class="window-dot dot-max" aria-hidden="true"></span>
+          </span>
+          <p class="modal-filename" id="modal-current-favs-title">current-favs.txt</p>
+        </div>
+
+        <div class="modal-content-area">
+          <div class="modal-text">
+            <h3 class="modal-heading">current favs</h3>
+            <p class="modal-subheading">Current fixations and favorites.</p>
+
+            <ul class="modal-list">
+              <li><b>Song:</b> talking 'bout you - wave to earth</li>
+              <li><b>Drinks:</b> Iced Brown Sugar & Honey Latte or Molly Tea Jasmine Milk Tea </li>
+              <li><b>Food/Cuisine:</b> Sushi </li>
+              <li><b>Colors:</b> Mint & Butter Yellow </li>
+              <li><b>Show:</b> Rotten Files with Stephanie Soo </li>
+              <li><b>Viral Trends:</b> Squishies <i>(but real ones have been on the trend since the 2010's)</i></li>
+              <li><b>Quote/Affirmation:</b> "Do the things that scare you." </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- MORE ABOUT ME POP UP -->
+      <div
+        class="about-modal"
+        id="modal-more-about-me"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-more-about-me-title"
+        hidden
+      >
+        <div class="modal-titlebar">
+          <span class="window-dots">
+            <button class="window-dot dot-close" type="button" aria-label="Close window"></button>
+            <span class="window-dot dot-min" aria-hidden="true"></span>
+            <span class="window-dot dot-max" aria-hidden="true"></span>
+          </span>
+          <p class="modal-filename" id="modal-more-about-me-title">more-about-me.txt</p>
+        </div>
+
+        <div class="modal-content-area">
+          <div class="modal-text">
+            <h3 class="modal-heading">more about me</h3>
+            <p class="modal-subheading">More fun facts about me!</p>
+
+            <p><b>
+              What drew you to UI/UX Design?
+            </p></b>
+
+            <p>
+              I've always loved building things and expressing my creativity. When I got to high school, I began branching into graphic design and coding, and was instantly drawn to both. 
+              One day I discovered the field of UI/UX design, and the rest is history!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERESTS POP UP -->
+      <div
+        class="about-modal"
+        id="modal-interests"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-interests-title"
+        hidden
+      >
+        <div class="modal-titlebar">
+          <span class="window-dots">
+            <button class="window-dot dot-close" type="button" aria-label="Close window"></button>
+            <span class="window-dot dot-min" aria-hidden="true"></span>
+            <span class="window-dot dot-max" aria-hidden="true"></span>
+          </span>
+          <p class="modal-filename" id="modal-interests-title">interests.txt</p>
+        </div>
+
+        <div class="modal-content-area">
+          <div class="modal-text">
+            <h3 class="modal-heading">interests</h3>
+            <p class="modal-subheading">What I do in my free time!</p>
+
+            <ul class="modal-list">
+              <li>Nail art/ Press-on nail art</li>
+              <li>Crochet</li>
+              <li>Photography & Vlogs</li>
+              <li>Drawing/ Illustration</li>
+              <li>Hang out with my awesome friends!!</li>
+              <li>Journaling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
+  <!-- PROJECTS PAGE -->
   <section class="projects-page" id="projects">
     <div class="bg-layer" aria-hidden="true">
       <img class="bg-image" src="assets/projects-page-bg.png" alt="projects-page-bg" />
@@ -193,6 +309,7 @@
     </div>
   </section>
 
+  <!-- CONTACTS PAGE -->
   <section class="contacts-page" id="contacts">
     <div class="bg-layer" aria-hidden="true">
       <img class="bg-image" src="assets/contacts-page-bg.png" alt="contacts-page-bg" />
@@ -252,6 +369,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-track">
       <div class="footer-track-inner">

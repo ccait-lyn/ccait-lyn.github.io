@@ -3,10 +3,6 @@
 }
 
 :root {
-  /* Single source of truth for the fixed nav bar's height. Change this
-     (or the .nav-bar height) and the page content follows — the body's
-     top padding and scroll offset are both derived from it. A small
-     script also syncs this to the nav's real height when it wraps. */
   --nav-height: 55px;
 }
 
@@ -36,7 +32,7 @@ button {
   cursor: pointer;
 }
 
-/* ---------- Nav bar ---------- */
+/* ---------- NAV BAR ---------- */
 
 .nav-bar {
   position: fixed;
@@ -111,12 +107,6 @@ button {
   object-fit: cover;
 }
 
-/* .bg-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(246, 243, 238, 0.45);
-} */
-
 .container {
   position: relative;
   z-index: 1;
@@ -129,12 +119,6 @@ button {
   flex: 1 0 0;
   min-height: 0;
 }
-
-/*.page-title {
-  display: flex;
-  align-items: center;
-  width: 358px;
-}*/
 
 .home-path {
   margin: 0;
@@ -180,7 +164,7 @@ button {
   margin: 0;
   font-family: 'Outfit', sans-serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: -0.48px;
   max-width: 563px;
 }
@@ -262,7 +246,7 @@ button {
   opacity: 0.95;
 }
 
-/* ---------- Page 2: cute intro / flower page ---------- */
+/* ---------- FLOWER PAGE ---------- */
 
 .intro-page {
   position: relative;
@@ -344,7 +328,7 @@ button {
   font-size: 100px;
 }
 
-/* ---------- Page 3: about me page ---------- */
+/* ---------- ABOUT ME PAGE ---------- */
 
 .about-page {
   position: relative;
@@ -487,7 +471,8 @@ button {
   height: 104.89%;
 }
 
-.photo-carousel {
+.photo-carousel,
+.about-modal {
   background: #d9d9d9;
   border-radius: 5px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -503,7 +488,8 @@ button {
   flex-shrink: 0;
 }
 
-.carousel-titlebar {
+.carousel-titlebar,
+.modal-titlebar {
   background: #e9e4dc;
   display: flex;
   align-items: center;
@@ -520,7 +506,8 @@ button {
   flex-shrink: 0;
 }
 
-.carousel-filename {
+.carousel-filename,
+.modal-filename {
   margin: 0;
   font-family: 'Roboto Mono', monospace;
   font-weight: 400;
@@ -575,7 +562,117 @@ button {
   display: block;
 }
 
-/* ---------- Page 4: projects page ---------- */
+/* ---------- POP UP WINDOWS (ABOUT ME PAGE) ---------- */
+
+.about-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(47, 36, 30, 0.18);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* `hidden` needs to win over the flex display above. */
+.about-modal-overlay[hidden],
+.about-modal[hidden] {
+  display: none;
+}
+
+/* Lock the page scroll while a window is open. */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* The three title-bar dots, sized/spaced to match fake-window-buttons.svg. */
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.window-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  display: block;
+}
+
+.dot-close {
+  background: #cd5959;
+  cursor: pointer;
+}
+
+.dot-close:hover {
+  background: #b94a4a;
+}
+
+.dot-min {
+  background: #d1cbc1;
+}
+
+.dot-max {
+  background: #5bcd59;
+}
+
+/* Text area: same frame as the carousel image area, but scrolls its text. */
+.modal-content-area {
+  flex: 1 0 0;
+  min-height: 0;
+  width: 100%;
+  overflow-y: auto;
+  padding: 24px 28px 28px;
+  background-color: #F6F3EE;
+}
+
+.modal-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.32px;
+  color: #2f241e;
+}
+
+.modal-text > * {
+  margin: 0 0 14px;
+}
+
+.modal-text > *:last-child {
+  margin-bottom: 0;
+}
+
+.modal-heading {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.56px;
+}
+
+.modal-subheading {
+  font-weight: 400;
+  font-size: 15px;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: -0.8px;
+  color: #664838;
+}
+
+.modal-list {
+  padding-left: 20px;
+}
+
+.modal-list li {
+  margin-bottom: 6px;
+}
+
+/* ---------- PROJECTS PAGE ---------- */
 
 .projects-page {
   position: relative;
@@ -695,7 +792,7 @@ button {
   line-height: 1.22;
 }
 
-/* ---------- Page 5: contacts page ---------- */
+/* ---------- CONTACTS PAGE ---------- */
 
 .contacts-page {
   position: relative;
@@ -864,7 +961,7 @@ button {
   overflow-wrap: anywhere;
 }
 
-/* ---------- Footer (continuous marquee) ---------- */
+/* ---------- FOOTER ---------- */
 
 .site-footer {
   position: relative;
@@ -939,7 +1036,8 @@ button {
   .about-content {
     justify-content: center;
   }
-  .photo-carousel {
+  .photo-carousel,
+  .about-modal {
     width: 100%;
     max-width: 492px;
   }
@@ -1042,8 +1140,6 @@ button {
 
 @media (max-width: 480px) {
   :root {
-    /* The nav wraps to a taller stacked layout here; this is a fallback
-       until the sync script measures its real height. */
     --nav-height: 130px;
   }
   .nav-bar {
